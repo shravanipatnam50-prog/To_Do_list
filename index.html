@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Today's To-Do</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="authSection" class="auth-section">
+
+    <div class="auth-box">
+
+        <h2>🌸 Welcome!</h2>
+
+        <p>Login to save your tasks across devices.</p>
+
+        <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email"
+        >
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter your password"
+        >
+
+        <button onclick="signUp()">
+            Create Account
+        </button>
+
+        <button onclick="signIn()">
+            Login
+        </button>
+
+        <p id="authMessage"></p>
+
+    </div>
+
+    </div>
+    
+    <div id="welcomeMessage" class="welcome-message">
+    <div class="welcome-box">
+        <h2>🌸 Welcome to your To-Do List!</h2>
+        <p>Let's make today productive ✨</p>
+    </div>
+    </div>
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div>
+                <p id="dateLabel">Today</p>
+                <h2 id="date"></h2>
+            </div>
+
+            <p id="count">0 / 0 completed</p>
+
+        </div>
+
+
+        <!-- ADD TASK -->
+
+        <div class="add-task">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to do today?"
+            >
+
+            <button onclick="addTask()">Add</button>
+
+        </div>
+
+
+        <!-- TODAY -->
+
+        <div id="todaySection">
+
+            <h3>Today</h3>
+
+            <div id="taskList"></div>
+
+            <p id="noTasks" class="message">
+                No tasks yet. Add your first task.
+            </p>
+
+
+            <hr>
+
+
+            <!-- PENDING -->
+
+            <h3>Pending</h3>
+
+            <div id="pendingList"></div>
+
+            <p id="noPending" class="message">
+                Nothing pending 🎉
+            </p>
+
+
+            <hr>
+
+
+            <!-- COMPLETED -->
+
+            <h3>Completed</h3>
+
+            <div id="completedList"></div>
+
+            <p id="noCompleted" class="message">
+                Nothing completed yet.
+            </p>
+
+        </div>
+
+
+        <!-- PREVIOUS DAYS BUTTON -->
+
+        <button
+            id="previousButton"
+            class="previous-button"
+            onclick="showPreviousDays()"
+        >
+            📅 Previous Days
+        </button>
+
+
+        <!-- PREVIOUS DAYS SECTION -->
+
+        <div id="previousSection" class="previous-section">
+
+            <h3>📅 Previous Days</h3>
+
+            <p class="previous-text">
+                Select a date to see your tasks.
+            </p>
+
+            <div class="date-picker">
+
+                <input
+                    type="date"
+                    id="previousDate"
+                >
+
+                <button onclick="viewPreviousDay()">
+                    View
+                </button>
+
+            </div>
+
+
+            <!-- SELECTED DAY -->
+
+            <div id="previousResult"></div>
+
+
+            <button
+                class="back-button"
+                onclick="backToToday()"
+            >
+                ← Back to Today
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
