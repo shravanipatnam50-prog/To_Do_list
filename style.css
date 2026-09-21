@@ -22,7 +22,9 @@ body {
 }
 
 
-/* Main container */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
     max-width: 650px;
@@ -40,7 +42,9 @@ body {
 }
 
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     display: flex;
@@ -52,11 +56,13 @@ body {
     margin-bottom: 25px;
 }
 
+
 .header p {
     color: #777;
 
     font-size: 14px;
 }
+
 
 .header h2 {
     margin-top: 5px;
@@ -65,7 +71,22 @@ body {
 }
 
 
-/* Completed counter */
+/* NEW: USER WELCOME */
+
+.user-welcome {
+    color: #5b21b6 !important;
+
+    font-size: 17px !important;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   COMPLETED COUNTER
+========================= */
 
 #count {
     background: #ede9fe;
@@ -80,7 +101,9 @@ body {
 }
 
 
-/* Add task area */
+/* =========================
+   ADD TASK
+========================= */
 
 .add-task {
     display: flex;
@@ -89,6 +112,7 @@ body {
 
     margin-bottom: 30px;
 }
+
 
 .add-task input {
     flex: 1;
@@ -106,6 +130,7 @@ body {
     background: #faf9ff;
 }
 
+
 .add-task input:focus {
     border-color: #8b5cf6;
 
@@ -114,7 +139,9 @@ body {
 }
 
 
-/* Add button */
+/* =========================
+   ADD BUTTON
+========================= */
 
 .add-task button {
     padding: 14px 22px;
@@ -140,6 +167,7 @@ body {
     transition: 0.2s;
 }
 
+
 .add-task button:hover {
     transform: translateY(-2px);
 
@@ -148,7 +176,9 @@ body {
 }
 
 
-/* Section headings */
+/* =========================
+   SECTION HEADINGS
+========================= */
 
 h3 {
     margin-bottom: 12px;
@@ -157,7 +187,9 @@ h3 {
 }
 
 
-/* Task */
+/* =========================
+   TASK
+========================= */
 
 .task {
     display: flex;
@@ -179,6 +211,7 @@ h3 {
     transition: 0.2s;
 }
 
+
 .task:hover {
     transform: translateX(3px);
 
@@ -186,7 +219,9 @@ h3 {
 }
 
 
-/* Checkbox */
+/* =========================
+   CHECKBOX
+========================= */
 
 .task input {
     width: 21px;
@@ -199,7 +234,9 @@ h3 {
 }
 
 
-/* Task name */
+/* =========================
+   TASK NAME
+========================= */
 
 .task-name {
     flex: 1;
@@ -208,13 +245,16 @@ h3 {
 }
 
 
-/* Completed task */
+/* =========================
+   COMPLETED TASK
+========================= */
 
 .task.completed {
     background: #ecfdf5;
 
     border-color: #bbf7d0;
 }
+
 
 .task.completed .task-name {
     text-decoration: line-through;
@@ -225,7 +265,9 @@ h3 {
 }
 
 
-/* Delete button */
+/* =========================
+   DELETE
+========================= */
 
 .delete {
     border: none;
@@ -247,6 +289,7 @@ h3 {
     transition: 0.2s;
 }
 
+
 .delete:hover {
     background: #fecaca;
 
@@ -254,7 +297,9 @@ h3 {
 }
 
 
-/* Empty messages */
+/* =========================
+   EMPTY MESSAGES
+========================= */
 
 .message {
     color: #9ca3af;
@@ -265,7 +310,9 @@ h3 {
 }
 
 
-/* Separators */
+/* =========================
+   SEPARATORS
+========================= */
 
 hr {
     border: none;
@@ -276,7 +323,9 @@ hr {
 }
 
 
-/* Pending section */
+/* =========================
+   PENDING
+========================= */
 
 #pendingList .task {
     background: #fff7ed;
@@ -284,12 +333,15 @@ hr {
     border-color: #fed7aa;
 }
 
+
 #pendingList .task-name {
     color: #ea580c;
 }
 
 
-/* Completed section */
+/* =========================
+   COMPLETED
+========================= */
 
 #completedList .task {
     background: #ecfdf5;
@@ -297,12 +349,15 @@ hr {
     border-color: #bbf7d0;
 }
 
+
 #completedList .task-name {
     color: #16a34a;
 }
 
 
-/* Previous Days button */
+/* =========================
+   PREVIOUS DAYS BUTTON
+========================= */
 
 .previous-button {
     width: 100%;
@@ -328,6 +383,7 @@ hr {
     transition: 0.2s;
 }
 
+
 .previous-button:hover {
     background: #ddd6fe;
 
@@ -335,7 +391,9 @@ hr {
 }
 
 
-/* Previous Days section */
+/* =========================
+   PREVIOUS DAYS SECTION
+========================= */
 
 .previous-section {
     display: none;
@@ -347,6 +405,7 @@ hr {
     border-top: 2px dashed #e5e7eb;
 }
 
+
 .previous-text {
     color: #777;
 
@@ -356,7 +415,9 @@ hr {
 }
 
 
-/* Date picker */
+/* =========================
+   DATE PICKER
+========================= */
 
 .date-picker {
     display: flex;
@@ -365,6 +426,7 @@ hr {
 
     margin-bottom: 25px;
 }
+
 
 .date-picker input {
     flex: 1;
@@ -380,9 +442,11 @@ hr {
     outline: none;
 }
 
+
 .date-picker input:focus {
     border-color: #8b5cf6;
 }
+
 
 .date-picker button {
     padding: 13px 20px;
@@ -401,7 +465,9 @@ hr {
 }
 
 
-/* Previous day result */
+/* =========================
+   PREVIOUS DAY RESULT
+========================= */
 
 .previous-result-title {
     color: #5b21b6;
@@ -410,6 +476,7 @@ hr {
 
     margin-bottom: 12px;
 }
+
 
 .previous-empty {
     color: #9ca3af;
@@ -420,7 +487,9 @@ hr {
 }
 
 
-/* Previous task */
+/* =========================
+   PREVIOUS TASK
+========================= */
 
 .previous-task {
     display: flex;
@@ -440,11 +509,13 @@ hr {
     border: 1px solid #eeeaff;
 }
 
+
 .previous-task.completed {
     background: #ecfdf5;
 
     border-color: #bbf7d0;
 }
+
 
 .previous-task.completed .previous-task-name {
     color: #16a34a;
@@ -454,26 +525,32 @@ hr {
     opacity: 0.7;
 }
 
+
 .previous-task.pending {
     background: #fff7ed;
 
     border-color: #fed7aa;
 }
 
+
 .previous-task.pending .previous-task-name {
     color: #ea580c;
 }
 
+
 .previous-task-icon {
     font-size: 18px;
 }
+
 
 .previous-task-name {
     font-size: 15px;
 }
 
 
-/* Back button */
+/* =========================
+   BACK BUTTON
+========================= */
 
 .back-button {
     width: 100%;
@@ -497,56 +574,15 @@ hr {
     cursor: pointer;
 }
 
+
 .back-button:hover {
     background: #e5e7eb;
 }
 
 
-/* Mobile */
-
-@media (max-width: 500px) {
-
-    body {
-        padding: 15px;
-    }
-
-    .container {
-        padding: 20px;
-
-        border-radius: 20px;
-    }
-
-    .header {
-        align-items: flex-start;
-
-        gap: 10px;
-    }
-
-    .header h2 {
-        font-size: 20px;
-    }
-
-    .add-task {
-        flex-direction: column;
-    }
-
-    .add-task button {
-        width: 100%;
-    }
-
-    .task {
-        padding: 13px 10px;
-    }
-
-    .date-picker {
-        flex-direction: column;
-    }
-
-    .date-picker button {
-        width: 100%;
-    }
-}
-/* Welcome message */
+/* =========================
+   WELCOME POPUP
+========================= */
 
 .welcome-message {
     position: fixed;
@@ -560,6 +596,7 @@ hr {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     background: rgba(91, 33, 182, 0.15);
@@ -608,11 +645,13 @@ hr {
 
     from {
         transform: scale(0.8);
+
         opacity: 0;
     }
 
     to {
         transform: scale(1);
+
         opacity: 1;
     }
 }
@@ -630,75 +669,236 @@ hr {
 
     100% {
         opacity: 0;
+
         pointer-events: none;
     }
 }
-/* Authentication */
+
+
+/* =========================
+   AUTHENTICATION
+========================= */
 
 .auth-section {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background: linear-gradient(
         135deg,
         #e0c3fc,
         #8ec5fc
     );
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     z-index: 2000;
 }
 
+
 .auth-box {
     width: 90%;
+
     max-width: 400px;
+
     background: white;
+
     padding: 30px;
+
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
     text-align: center;
 }
 
+
 .auth-box h2 {
     color: #5b21b6;
+
     margin-bottom: 10px;
 }
 
+
 .auth-box p {
     color: #777;
+
     margin-bottom: 20px;
 }
 
+
 .auth-box input {
     width: 100%;
+
     box-sizing: border-box;
+
     padding: 13px;
+
     margin-bottom: 12px;
+
     border: 1px solid #ddd;
+
     border-radius: 10px;
+
     font-size: 15px;
 }
 
+
+.auth-box input:focus {
+    outline: none;
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+
 .auth-box button {
     width: 100%;
+
     padding: 13px;
+
     margin-top: 8px;
+
     border: none;
+
     border-radius: 10px;
+
     background: #5b21b6;
+
     color: white;
+
     font-size: 15px;
+
     cursor: pointer;
 }
+
 
 .auth-box button:hover {
     opacity: 0.9;
 }
 
+
+/* =========================
+   LOGIN / SIGN UP SWITCH
+========================= */
+
+.auth-switch {
+    margin-top: 18px !important;
+
+    margin-bottom: 0 !important;
+
+    font-size: 14px;
+}
+
+
+.auth-switch button {
+    width: auto;
+
+    padding: 0;
+
+    margin: 0 0 0 5px;
+
+    background: none;
+
+    color: #5b21b6;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+.auth-switch button:hover {
+    opacity: 0.75;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   AUTH MESSAGE
+========================= */
+
 #authMessage {
     margin-top: 15px;
+
     font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .container {
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .header {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+
+    .user-welcome {
+        font-size: 15px !important;
+    }
+
+
+    .add-task {
+        flex-direction: column;
+    }
+
+
+    .add-task button {
+        width: 100%;
+    }
+
+
+    .task {
+        padding: 13px 10px;
+    }
+
+
+    .date-picker {
+        flex-direction: column;
+    }
+
+
+    .date-picker button {
+        width: 100%;
+    }
+
+
+    .auth-box {
+        padding: 25px 20px;
+    }
+
 }
