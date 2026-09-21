@@ -10,6 +10,7 @@ const supabaseClient =
         SUPABASE_KEY
     );
 
+
 let tasks = [];
 
 
@@ -57,10 +58,15 @@ const previousResult =
     document.getElementById("previousResult");
 
 
-// Authentication elements
+// ======================================================
+// AUTHENTICATION ELEMENTS
+// ======================================================
 
 const authSection =
     document.getElementById("authSection");
+
+const nameInput =
+    document.getElementById("nameInput");
 
 const emailInput =
     document.getElementById("emailInput");
@@ -70,6 +76,30 @@ const passwordInput =
 
 const authMessage =
     document.getElementById("authMessage");
+
+const authTitle =
+    document.getElementById("authTitle");
+
+const authSubtitle =
+    document.getElementById("authSubtitle");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const signUpButton =
+    document.getElementById("signUpButton");
+
+const switchText =
+    document.getElementById("switchText");
+
+const switchButton =
+    document.getElementById("switchButton");
+
+const userWelcome =
+    document.getElementById("userWelcome");
+
+const welcomeTitle =
+    document.getElementById("welcomeTitle");
 
 
 // ======================================================
@@ -91,7 +121,13 @@ function getDateKey(dateObject) {
             dateObject.getDate()
         ).padStart(2, "0");
 
-    return year + "-" + month + "-" + day;
+    return (
+        year +
+        "-" +
+        month +
+        "-" +
+        day
+    );
 }
 
 
@@ -150,6 +186,137 @@ async function getCurrentUser() {
 
 
     return data.user;
+}
+
+
+// ======================================================
+// SHOW SIGN UP FORM
+// ======================================================
+
+function showSignUp() {
+
+    authTitle.innerText =
+        "🌸 Create your account";
+
+
+    authSubtitle.innerText =
+        "Create an account to save your tasks.";
+
+
+    nameInput.style.display =
+        "block";
+
+
+    loginButton.style.display =
+        "none";
+
+
+    signUpButton.style.display =
+        "block";
+
+
+    switchText.innerText =
+        "Already have an account?";
+
+
+    switchButton.innerText =
+        "Login";
+
+
+    switchButton.onclick =
+        showLogin;
+
+
+    authMessage.innerText =
+        "";
+}
+
+
+// ======================================================
+// SHOW LOGIN FORM
+// ======================================================
+
+function showLogin() {
+
+    authTitle.innerText =
+        "🌸 Welcome!";
+
+
+    authSubtitle.innerText =
+        "Login to save your tasks across devices.";
+
+
+    nameInput.style.display =
+        "none";
+
+
+    loginButton.style.display =
+        "block";
+
+
+    signUpButton.style.display =
+        "none";
+
+
+    switchText.innerText =
+        "Don't have an account?";
+
+
+    switchButton.innerText =
+        "Sign Up";
+
+
+    switchButton.onclick =
+        showSignUp;
+
+
+    authMessage.innerText =
+        "";
+}
+
+
+// ======================================================
+// SHOW USER NAME
+// ======================================================
+
+async function showUserName() {
+
+    const user =
+        await getCurrentUser();
+
+
+    if (!user) {
+
+        return;
+    }
+
+
+    let name =
+        user.user_metadata?.full_name;
+
+
+    // Existing users may not have a saved name
+
+    if (
+        !name ||
+        name.trim() === ""
+    ) {
+
+        name =
+            user.email.split("@")[0];
+    }
+
+
+    userWelcome.innerText =
+        "🌸 Welcome, " +
+        name +
+        "!";
+
+
+    welcomeTitle.innerText =
+        "🌸 Welcome, " +
+        name +
+        "!";
 }
 
 
@@ -266,6 +433,7 @@ function displayTasks() {
         let div =
             document.createElement("div");
 
+
         div.className =
             "task";
 
@@ -277,7 +445,6 @@ function displayTasks() {
             );
 
             completedCount++;
-
         }
 
 
@@ -323,7 +490,6 @@ function displayTasks() {
             pendingList.appendChild(
                 copy
             );
-
         }
     }
 
@@ -618,7 +784,6 @@ taskInput.addEventListener(
         if (event.key === "Enter") {
 
             addTask();
-
         }
 
     }
@@ -633,6 +798,7 @@ function showPreviousDays() {
 
     previousSection.style.display =
         "block";
+
 
     previousButton.style.display =
         "none";
@@ -728,7 +894,8 @@ async function viewPreviousDay() {
     }
 
 
-    previousResult.innerHTML = "";
+    previousResult.innerHTML =
+        "";
 
 
     // Convert date for display
@@ -770,7 +937,10 @@ async function viewPreviousDay() {
 
     // No tasks
 
-    if (!data || data.length === 0) {
+    if (
+        !data ||
+        data.length === 0
+    ) {
 
         let message =
             document.createElement("p");
@@ -823,7 +993,6 @@ async function viewPreviousDay() {
             div.classList.add(
                 "pending"
             );
-
         }
 
 
@@ -860,11 +1029,14 @@ function backToToday() {
     previousSection.style.display =
         "none";
 
+
     previousButton.style.display =
         "block";
 
+
     previousResult.innerHTML =
         "";
+
 
     previousDate.value =
         "";
@@ -877,20 +1049,26 @@ function backToToday() {
 
 async function signUp() {
 
+    let name =
+        nameInput.value.trim();
+
+
     let email =
         emailInput.value.trim();
+
 
     let password =
         passwordInput.value.trim();
 
 
     if (
+        name === "" ||
         email === "" ||
         password === ""
     ) {
 
         authMessage.innerText =
-            "Please enter email and password.";
+            "Please enter your name, email and password.";
 
         return;
     }
@@ -921,8 +1099,13 @@ async function signUp() {
 
             options: {
 
+                data: {
+                    full_name: name
+                },
+
                 emailRedirectTo:
-                    window.location.origin + window.location.pathname
+                    window.location.origin +
+                    window.location.pathname
             }
         });
 
@@ -949,6 +1132,7 @@ async function signIn() {
 
     let email =
         emailInput.value.trim();
+
 
     let password =
         passwordInput.value.trim();
@@ -1000,6 +1184,11 @@ async function signIn() {
         "";
 
 
+    // Show user's name
+
+    await showUserName();
+
+
     // Load cloud tasks
 
     await loadTasks();
@@ -1037,6 +1226,17 @@ async function signOut() {
 
     authSection.style.display =
         "flex";
+
+
+    showLogin();
+
+
+    userWelcome.innerText =
+        "🌸 Welcome!";
+
+
+    welcomeTitle.innerText =
+        "🌸 Welcome to your To-Do List!";
 }
 
 
@@ -1056,6 +1256,9 @@ async function checkLogin() {
 
         authSection.style.display =
             "none";
+
+
+        await showUserName();
 
 
         await loadTasks();
@@ -1089,6 +1292,14 @@ supabaseClient.auth.onAuthStateChange(
 
             authSection.style.display =
                 "flex";
+
+            showLogin();
+
+            userWelcome.innerText =
+                "🌸 Welcome!";
+
+            welcomeTitle.innerText =
+                "🌸 Welcome to your To-Do List!";
         }
     }
 );
